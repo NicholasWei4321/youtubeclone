@@ -1,20 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, User } from "firebase/auth";
-
+import { getFunctions } from "firebase/functions";
+import { firebaseConfig } from './config';
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBMTinVEJ0UN4IxYTDva63HJ_Du4c3r__Y",
-  authDomain: "yt-clone-700a4.firebaseapp.com",
-  projectId: "yt-clone-700a4",
-  appId: "1:885922730228:web:fcdce5ef50787741584ea1"
-};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
+export const functions = getFunctions();
+
+
 
 /**
  * Signs the user in with a Google popup.
